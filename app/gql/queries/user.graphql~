@@ -1,0 +1,5 @@
+query human($id: String!) {
+  human(id: $id) {
+    name
+  }
+}

@@ -1,12 +1,18 @@
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
-    modulePrefix: 'jaggcliente',
-    environment,
-    rootURL: '/',
-    locationType: 'auto',
-    EmberENV: {
+    let ENV = {
+	modulePrefix: 'jaggcliente',
+	environment,
+	rootURL: '/',
+	locationType: 'auto',
+	apollo: {
+	    apiURL: 'http://localhost:4000/graphql',
+	    // Optionally, set the credentials property of the Fetch Request interface
+	    // to control when a cookie is sent:
+	    // requestCredentials: 'same-origin', // other choices: 'include', 'omit'
+	},
+	EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
@@ -19,7 +25,8 @@ module.exports = function(environment) {
 
     APP: {
       // Here you can pass flags/options to your application instance
-      // when it is created
+	// when it is created
+	usingCors: true,
     }
   };
 
