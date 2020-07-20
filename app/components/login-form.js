@@ -23,7 +23,6 @@ export default class LoginFormComponent extends Component {
 
         if (this.session.isAuthenticated) {
 	    let user = this.apollo.watchQuery({query: query});
-            debugger
             _me.router.transitionTo('index'); 
         }
     }    
