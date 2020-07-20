@@ -1,0 +1,8 @@
+query {
+       books{
+           id
+           title
+           short_description
+       }
+       
+}

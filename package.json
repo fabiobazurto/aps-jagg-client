@@ -20,6 +20,8 @@
   "devDependencies": {
     "@ember/optional-features": "^1.1.0",
     "@glimmer/component": "^1.0.0",
+    "apollo-link-error": "^1.1.13",
+    "apollo-link-http": "^1.5.17",
     "babel-eslint": "^10.0.3",
     "broccoli-asset-rev": "^3.0.0",
     "ember-apollo-client": "^2.1.0",
@@ -55,5 +57,9 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "apollo-link": "^1.2.14",
+    "apollo-link-context": "^1.0.20"
   }
 }

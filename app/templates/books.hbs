@@ -1,19 +1,17 @@
-<h1>Users</h1>
 <div class="card">
   <ul>
-    {{#each model.users as |user|}}
+    {{#each model.books as |book|}}
       <li>
         <div class="row">
           <div>
-            User #{{user.id}}
+            Book #{{book.id}}
           </div>
           <div>
-            <h3>{{user.username}}</h3>
-            <p>{{user.email}}</p>
+            <h3>Title {{book.title}}</h3>
+            <p>{{book.short_description}}</p>
           </div>
         </div>
       </li>
     {{/each}}
   </ul>
 </div>
-

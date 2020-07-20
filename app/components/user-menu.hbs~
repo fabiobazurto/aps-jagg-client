@@ -1,0 +1,13 @@
+<div class="menu">
+  {{#if this.session.isAuthenticated}}
+    <ul>
+      <li> <a href="#" {{on "click" this.invalidateSession}}>Logout</a></li>
+      <li> <LinkTo @route="books">Books</LinkTo></li>
+      <li> <LinkTo @route="users">Users</LinkTo></li>      
+    </ul>
+    
+    
+  {{else}}
+    <LinkTo @route="login">Login</LinkTo>
+  {{/if}}
+</div>

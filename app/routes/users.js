@@ -1,19 +1,12 @@
 import Route from '@ember/routing/route';
-//import { inject } from '@ember/service';
-import { queryManager } from "ember-apollo-client";
-//import UnsubscribeRoute from 'ember-apollo-client/mixins/unsubscribe-route';
-//import RouteQueryManager from 'ember-apollo-client/mixins/route-query-manager';
+import { inject as service } from '@ember/service';
+import query from "../gql/queries/users.graphql";
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-import query from "../gql/queries/user.graphql";
-
-
-//export default Route.extend(UnsubscribeRoute, {
-//export default Route.extend(RouteQueryManager, {
-export default Route.extend( {    
-    //    apollo: inject.service(),
-    apollo: queryManager(),
+export default Route.extend(AuthenticatedRouteMixin, {
+    apollo: service(),
     model() {
-	//	return this.get('apollo').query({query},'me').catch(error => alert(error))
-        return this.apollo.watchQuery({ query: query });
+	return this.apollo.watchQuery({ query: query });
     }
 });
+

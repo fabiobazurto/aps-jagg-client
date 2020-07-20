@@ -1,0 +1,22 @@
+
+{{#if session.isAuthenticated}}
+  <h1>Ingreso existoso</h1>
+{{else}}  
+  <form>
+    <label for="identification">Login</label>
+    {{input type='text' value=identification}}
+
+    <label for="password">Password</label>
+    {{input type='password' value=password}}
+
+    <button  {{action "authenticate"}} class="login35in-form-btn btn btn-danger" role="button" >
+      Login
+    </button>
+
+    {{#if this.errorMessage}}
+      <p>{{this.errorMessage}}</p>
+    {{/if}}
+  </form>
+
+
+{{/if}}
