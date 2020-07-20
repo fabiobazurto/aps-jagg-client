@@ -22,7 +22,9 @@ export default class LoginFormComponent extends Component {
         }
 
         if (this.session.isAuthenticated) {
-	    let user = this.apollo.watchQuery({query: query});
+	    let user = await this.apollo.watchQuery({query: query});
+            debugger
+            this.session.set("data.email",user.me.username);
             _me.router.transitionTo('index'); 
         }
     }    
