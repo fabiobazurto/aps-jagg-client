@@ -1,0 +1,3 @@
+mutation UploadMutation($myfile: Upload!) {
+  singleUpload(file: $myfile)
+}

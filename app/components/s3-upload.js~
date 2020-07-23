@@ -1,0 +1,37 @@
+import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
+import mutation from "../gql/mutations/singleUpload.graphql";
+
+export default class S3UploadComponent extends Component {
+
+    @service apollo;
+
+    async uploadImage(file){
+
+        var blob = new Blob(['foo', 'bar']);
+        var ff = new File([blob],"filename");
+        
+
+        this.apollo.mutate({mutation:  mutation, variables: {myfile: dd} },"singleUpload");
+
+/*
+
+        file.readAsDataURL().then(function (result) {
+            debugger
+            console.log('enter file read');
+            _me.apollo.mutate({mutation:  mutation, variables: {myfile: result} },"singleUpload").then(
+		function(response){
+                    let img = document.getElementsByClass("preview-image");
+                    img[0].src=result;
+		},
+            	function(xhr, status, error) {
+		    var response = xhr.responseText;
+                    console.log(xhr);
+
+                });
+            
+
+        });  
+*/
+    }
+}

@@ -2,7 +2,7 @@
   {{#if this.session.isAuthenticated}}
     <ul>
       <li> Logged as: {{this.session.data.email}} (<a href="#" {{on "click" this.invalidateSession}}>Logout</a>)</li>      
-
+      <li> <a href="/">Index</a></li>
       <li> <a href="/books">Books</a></li>
       <li> <a href="/users">Users</a></li>      
     </ul>

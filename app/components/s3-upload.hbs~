@@ -1,0 +1,17 @@
+<div>
+
+
+    <FileUpload @name="avatar"
+                @accept="image/*"
+                @onfileadd={{action this.uploadImage}}  as |queue|>
+
+                <a class="button">
+                  {{#if queue.files.length}}
+                    Uploading...
+                  {{else}}
+                    Upload file
+                  {{/if}}
+                </a>
+                <img class="image-preview">
+      </FileUpload>
+</div>

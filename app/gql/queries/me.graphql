@@ -3,6 +3,7 @@ query{
            id
            username
            email
+	   avatar
        }
        
 }
